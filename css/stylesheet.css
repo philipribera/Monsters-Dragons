@@ -1,0 +1,662 @@
+/******************************************/
+/***	STYLESHEET MONSTERS AND DRAGON	***/
+/***	AUTHOR: Philip R				***/
+/******************************************/
+
+
+/*** GENERICS ***/ 
+ 
+* 	{		
+	box-sizing: border-box;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	}
+body {
+	background-image: url("../images/dragon_1920.png");
+	background-color: rgb(22,22,22);
+	background-repeat: no-repeat;
+	background-size: 72% 90%; 
+	background-size: contain; 	
+	background-position: center;
+	font-family: sans-serif;
+	height: 100vh;
+	}	
+	 
+p 	{
+	font-size: 1em;
+	}	
+h1, h2, h3, h4, p {
+	font-family: 'Quicksand','Aldrich', 'Verdana', sans-serif;
+}	
+h3 {
+	font-size: 1.22em;
+	}		
+ul 	{
+	list-style-type: none;
+	}	
+label, select {
+	cursor: pointer;
+	}	
+footer {	
+	position: fixed;
+	overflow: hidden;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+	padding: 12px 5px;	
+}
+.footer-text {
+	font-size: 0.75em;
+	color: rgb(93,93,93);
+}
+/* General button styling */
+.btn {
+	font-size: 1em;
+	font-weight: 600;	
+	background-color: rgb(35,35,35);
+	color: rgb(234,237,237);
+	color: rgb(204,207,207);
+	cursor: pointer;
+	padding: 8px 12px;
+	margin-right: 20px;
+	border: 1px solid rgb(232, 227, 227);			
+	border: 1px solid rgb(172, 177, 177);			
+	border-radius: 4px;
+	}
+	.btn:hover {
+		color: rgb(253, 165, 50);
+	}	
+
+/*** GENERAL LAYOUT ***/		
+
+.wrapper {
+	display: none;
+	width: 86%;	
+	max-width: 922px;	
+	background-color: rgb(13, 84, 86);
+	color: rgb(248,248,248);
+	padding: 20px 20px 12px 20px;
+	border: 4px solid rgb(173, 173, 173);
+	margin: 0 auto;
+	opacity: 0.9;
+	box-shadow: 1px 1px 1px rgb(54,54,54);
+	}
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	}
+.flex-item {
+	flex: 1;
+	min-width: 290px;
+	padding: 8px;
+	margin: 10px;
+	}
+
+.stat-container {    
+	width: auto;
+	text-align: center;	
+	margin-top: 28px;
+}
+
+.stat-container-hd {
+	display: none;
+}
+
+#display-stat {
+	display: inline-block;
+	background-color: rgb(57,57,57);
+	padding: 12px 18px;
+	border: 1px solid rgb(102,102,102);
+	border-radius: 10px;
+	opacity: 0.8;
+}
+.stat-li {
+	display: inline;
+	list-style-type: none;
+	font-size: 1.1em;	
+	color: rgb(242,242,242);	
+}
+.stat-li:not(:last-child) {
+	margin-right: 12px;	
+}
+.stat-li span {
+	color: rgb(255, 193, 12);	
+}
+
+
+/*** OTHER ***/
+
+#back {
+	display: none;		
+	position: fixed; 
+	left: 0; 
+	top: 0; 	
+	background-color: rgba(57,57,57, 0.7);
+	border: 1px solid rgb(112,112,112);
+	border-left: none;
+	vertical-align: 2%;
+	text-align: center;
+}
+#back button {	
+	background-color: transparent;
+	color: rgb(194,194,194);
+	padding: 10px;
+	border: none;
+	cursor: pointer;	
+}
+#back button:hover {
+	color: rgb(222,222,222);
+}
+
+#btn-delete {
+	display: none;
+}
+
+#game-title {
+	width: fit-content;
+	max-width: 97%;	
+	margin: 0 auto 10px auto;
+	color: rgb(255, 143, 10);
+	color: rgb(111, 111, 111);
+	font-weight: 600;
+	font-size: 3.1em;
+	font-size: 3.98em;
+	text-shadow: 3px 1px 1px rgb(244,244,244);
+}
+
+/*** GAME TITLE ***/
+.exp-letter {
+	font-size: 1.35em;
+}
+
+/*** MENU ***/
+.menu li {
+	cursor: pointer;
+}
+#menu-list {
+	width: 206px;	
+	background-color: rgba(15, 15, 15, 0.6);	
+	font-size: 1.5em;
+	font-weight: 600;
+	text-align: center;
+	padding: 18px 10px 10px 10px;
+	margin: 8% auto 0;	
+	border: 2px solid rgba(73,73,73,0.9);	
+	border-radius: 4%;
+}
+#menu-list .menu-item {
+	color: rgb(245, 145, 57);
+	margin-bottom: 12px;
+}
+#menu-list .menu-item:hover {
+	opacity: 0.9;
+}
+
+
+/*** INPUT FIELD ***/
+	 
+#create-title {
+	font-size: 1.75em;
+	}
+form input, form select {
+	padding: 2px;
+	margin: 6px 0 6px 10px;
+	}
+form select {
+	font-size: 0.9em;
+	background-color: #407373;
+    color: whitesmoke;
+	min-width: 92px;	
+	}	
+form ul li {			
+	margin: 4px 0;
+	}
+.input-art {
+	margin-bottom: 24px;
+	}
+.input-title {	
+	color: rgb(216, 206, 194);
+	padding: 0;
+	margin-bottom: 10px;
+	text-shadow: 1px 1px 0.5px rgb(35,35,35);
+	}	
+	
+	
+/*** DISPLAY CHARACTER FIELD ***/	
+
+#my-character {
+	display: none;	
+	min-width: 346px;
+	background-color: transparent;
+	color: rgb(216, 206, 194);		
+	border: none;
+	}	
+#my-character span {
+	font-weight: 600;
+	}			
+		
+#flex-character-container {
+	display: flex;
+	flex-wrap: wrap;	
+	}
+.char-img-exp {
+	margin-bottom: 16px;
+	}
+#my-character #pre-name {
+	font-size: 1.25em;
+	opacity: 0.9;
+	color: rgb(226, 216, 204);		
+	}
+#character-name {
+	margin-bottom: 8px;
+	white-space: nowrap;
+	}	
+#name-character {
+	max-width: 14ch;
+	background-color: transparent;
+	color: rgb(250,250,250);
+	font-size: 1.4em;
+	padding: 4px;
+	border: none;
+	margin-bottom: 4px;			
+	}
+
+#char-img {
+	position: relative;
+	margin-right: 26px;	
+	}	
+#char-img img {
+	background-color: rgba(255,255,255, 0.95);
+	width: 180px;
+	height: 212px;		
+	padding: 2px 4px;			
+	}
+#char-img .lgImg {	
+	width: 306px;
+	height: 352px;	
+	}	
+
+.fa-expand {
+	position: absolute;
+	bottom: 4%;
+	right: 4%;
+	color: rgb(232, 151, 101);	
+	font-size: 1em;
+	font-weight: 600;
+	cursor: pointer;
+	}
+	
+.display-data-hd {
+	display: none;
+	}	
+
+#character-info {
+	line-height: 1.25;
+	margin-bottom: 4px;
+	}	
+#character-data {
+	font-weight: 600;
+	}
+#character-data li {
+	min-width: 120px;
+	padding: 4px;
+	margin: 8px 0;
+	}
+#character-data span {	
+	color: rgb(252,252,252);	
+	margin-left: 2px;
+	}	
+	
+#character-text span {
+	word-spacing: 3px;
+	color: rgb(242, 240, 240);
+	}
+
+.items {
+	font-size: 1.2em;
+	font-weight: 600; 
+	color: rgb(63, 177, 52);
+}
+.bad-info {	
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 600; 
+	color: rgb(233, 166, 41);
+	margin-bottom: 18px;
+}
+	
+.items:hover i {
+	opacity: 1;
+}
+.fa-thumbs-up, .fa-thumbs-down {
+	margin-left: 12px;
+	opacity: 0.8;
+}
+
+	
+/*** STORY LINE ***/
+
+.btn-startHd {
+	display: none;
+}
+.btn-start {	
+	bottom: 12%;
+	margin: 22px auto;
+	background-color: rgb(226, 135, 26);
+	color: rgb(244,244,244);
+	}
+	
+.story-intro, .story-intro-part1, .story-day1North, .story-day1-Wolf, .story-day1Leave, .story-day1oldLady, .story-day1East, .story-day1-Gate, .story-day1Smalltown  {
+	display: none;			
+	}
+
+#episode-container {
+	display: none;
+}
+
+.episode-stories {		
+	max-width: 922px;
+	background-color: rgba(4,4,4, 0.65);
+	color: rgb(250,250,250);
+	padding: 28px 38px;
+	margin: 22px auto;
+	border: 2px solid rgba(73,73,73,0.9);
+	border-radius: 1%;
+	}
+.episode-stories h3, #msg-over {
+	font-family: 'Volkhov', serif;
+}		
+.episode-stories p, .dec-item {
+	font-family: 'Volkhov', serif;
+	font-size: 1.2em;
+	line-height: 1.35em;
+}	
+.episode-title {	
+	font-family: cursive;
+	text-align: center;
+	font-style: italic;
+	color: rgb(222, 191, 70);	
+	text-shadow: 1px 1px 0.5px rgb(7,7,7);
+	margin-bottom: 16px;
+}
+
+.story-day {
+	text-align: center;
+	color: rgb(245, 145, 57);	
+	margin-bottom: 16px;
+	}	
+.story-chapter {
+	font-size: 1.9em;	
+	margin-bottom: 10px;
+	}
+.story-location {
+	color: rgb(244, 165, 41);	
+	}	
+
+.dec-item {
+	cursor: pointer;
+	color: rgb(255, 167, 47);
+	padding: 12px;
+	}
+.dec-item:hover {
+	color: rgb(255, 183, 75)	
+}
+.story-more, .game-over, .show-troll-hp {
+	display: flex;
+	font-size: 1.1em;
+	font-weight: 600;
+	justify-content: center;			
+	cursor: pointer;	
+	color: rgb(187, 187, 187);
+	margin: 34px 0 12px 0;
+	}
+.story-more:hover, .text-more:hover, .gate-more:hover {
+	color: rgb(207,207,207);
+}
+.text-more, .gate-more:not(:last-child) {
+	display: flex;	
+	justify-content: center;			
+	cursor: pointer;	
+	color: rgb(187, 187, 187);
+	margin: 22px 0;
+}
+#msg-over {
+	font-size: 2.5em;
+	text-align: center;
+	color: rgb(240, 157, 24);
+	margin: 44px 0;
+}		
+#camp-fire {
+	filter: brightness(97%);
+	margin: 22px 0 36px 12px;
+}
+/*** Wolf attack ***/
+.wolf-victory-survive, .wolf-victory-pyrrhic {
+	display: block;
+}
+.wolf-victory-survive-hd, .wolf-victory-pyrrhic-hd {
+	display: none;
+}
+
+#part2, #part3, #part4, #part5 {
+	display: none;
+}
+#show-square {
+	display: none;
+}
+
+/*** Troll fight ***/
+.troll-victory-survive, .troll-victory-pyrrhic {
+	display: block;
+}
+.troll-victory-survive-hd, .troll-victory-pyrrhic-hd {
+	display: none;
+}
+
+
+/*** END STORY LINE ***/
+
+
+/*** IMAGES ***/
+.forest-img {
+	border: 2px solid rgb(192,192,192);
+}
+.story-img {
+	width: auto;
+	max-width: 840px;
+	max-width: -webkit-fill-available;
+	border: 2px solid rgb(192,192,192);
+	margin-bottom: 12px;
+}
+.story-img-r {
+	float: right;
+	background: transparent;
+	margin: 12px 0 12px 12px;
+}
+.story-img-l {
+	float: left;	
+	margin: 12px 12px 12px 0;
+}	
+#img-smalltown {
+	filter: brightness(95%); 
+}
+		
+	
+/*** MEDIA QUERIES ***/
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	#game-title {
+		font-size: 2.95em;
+		font-size: 3.85em;		
+	}
+	#menu-list {
+		margin-top: 8%;
+	}
+	.wrapper {
+		width: 88%;		
+		padding: 12px;				
+	}
+	.story-wrapper {
+		margin: 0 auto;
+	}	
+	.episode-stories {
+		width: 80%;				
+	}
+	#char-img {				
+		margin-right: 16px;
+	}	
+	#east-troll {				
+		width: 46%;		
+		margin-left: 12px;				
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {	
+	body {
+		background-size: 90% 82%; 
+	}	
+	#game-title {
+		text-align: center;
+		font-size: 2.55em;
+		font-size: 3.15em;
+	}
+	.wrapper {
+		width: 94%;		
+		padding: 14px 14px 10px 14px;		
+		margin: 8px auto;
+	}
+	.flex-item {		
+		margin: 8px;
+	}
+	
+	#char-img {				
+		margin-right: 12px;
+	}	
+	.btn {
+		margin-right: 12px;
+	}
+	.story-wrapper {
+		width: 84%;
+		background-color: rgba(5,5,5,0.70);	
+		margin: 0 auto;	
+	}
+	.episode-stories {
+		padding: 22px 28px;
+	}
+	#east-troll {				
+		width: 54%;		
+		margin-left: 12px;				
+	}
+	#img-smalltown {
+		max-width: -webkit-fill-available;
+	}
+	#msg-over {
+		font-size: 1.9em;
+		margin: 22px 0;
+	}
+}
+
+@media screen and (max-width: 767px) {	
+	#game-title {
+		text-align: center;
+		font-size: 1.9em;
+		font-size: 2.45em;
+	}
+	.wrapper {
+		width: 94%;
+	}	
+	.flex-item {
+		flex-basis: 100%;	
+		margin: 12px 0;
+	}
+	.flex-item-img {
+		flex-basis: auto;		
+	}
+	
+	.story-wrapper {
+		width: 90%;	
+		margin: auto;
+	}	
+	.episode-stories {
+		padding: 22px;
+	}
+		
+	#east-troll {
+		background: rgb(15,15,15);
+		background: transparent;
+		display: block;
+		width: 100%;		
+		margin: 12px 0;				
+	}
+	#img-smalltown {
+		max-width: -webkit-fill-available;
+	}
+	#msg-over {
+		font-size: 2em;		
+		margin: 22px;
+	}	
+}
+
+@media screen and (max-width: 479px) {
+	#game-title {
+		font-size: 1.65em;		
+	}
+	.wrapper {
+		width: 100%;	
+		min-width: 352px;		
+		padding: 12px;		
+		border-left: none;
+		border-right: none;
+	}	
+	.wrapper h1 {
+		text-align: center;	
+	}
+	#my-form {
+		padding: 0 10px;
+		margin: 32px 0;
+	}	
+	#my-character {
+		margin: 0;
+	}
+	#char-img {
+		flex-basis: 98%;		
+		margin-bottom: 12px;
+	}
+	#char-img img {
+		width: 262px;
+		height: 306px;
+	}
+	.fa-expand {
+		display: none;	
+	}
+	#flex-character-container {
+		margin-bottom: 16px;
+	}	
+	#character-info {
+		font-size: 1em;	
+	}
+	#character-text span {
+		word-spacing: 0;	
+	}	
+	.story-wrapper {
+		width: 96%;
+		background-color: rgba(5,5,5,0.75);
+	}
+	.episode-stories {
+		padding: 14px;
+	}
+	#img-smalltown {
+		max-width: 344px;
+	}
+	footer {
+		background-color: rgba(37,37,37, 1);
+	}
+	.footer-text {
+		font-size: 0.8em;
+		color: rgb(134,134,134);
+	}
+}
+	
+	
+	

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>MINIUPPGIFT 4</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link href="css/stylesheet.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Volkhov"
+      rel="stylesheet"
+    />
+  </head> 
+
+  <body>
+    <br />
+    <!--<h1 id="game-title">DRAGONS AND TAX COLLECTORS</h1>-->
+    <h1 id="game-title">
+      <span class="exp-letter">M</span>ONSTERS
+      <span class="exp-letter">&</span>
+      <span class="exp-letter">D</span>RAGONS
+    </h1>
+
+    <div class="menu">
+      <ul id="menu-list">
+        <li id="new-game" class="menu-item">New game</li>
+        <li id="load-game" class="menu-item">Load character</li>
+        <li id="leave-game" class="menu-item">Credits</li>
+      </ul>
+    </div>
+
+    <div class="wrapper">
+      <h2 id="create-title">Create character</h2>
+      <div class="flex-container">
+        <form id="my-form" class="flex-item" action="#" method="get">
+          <article class="input-art">
+            <h3 class="input-title">Choose your race</h3>
+            <select id="race">
+              <option value="human">Human</option>
+              <option value="elf">Elf</option>
+              <option value="dwarf">Dwarf</option>
+              <option value="orc">Orc</option> </select
+            ><br />
+          </article>
+
+          <article class="input-art">
+            <h3 class="input-title">Choose your gender</h3>
+            <label
+              ><input
+                class="gender"
+                type="radio"
+                name="gender"
+                value="male"
+                checked
+              />
+              Male</label
+            >
+            <label
+              ><input
+                class="gender"
+                type="radio"
+                name="gender"
+                value="female"
+              />
+              Female</label
+            >
+          </article>
+
+          <article class="input-art">
+            <h3 class="input-title">Choose your role</h3>
+            <label
+              ><input type="radio" name="role" value="warrior" checked />
+              Warrior</label
+            >
+            <label><input type="radio" name="role" value="mage" /> Mage</label>
+            <label
+              ><input type="radio" name="role" value="thief" /> Thief</label
+            >
+          </article>
+          <br />
+
+          <button id="btn-create" class="btn">Create Character</button><br />
+        </form>
+
+        <section id="my-character" class="flex-item">
+          <div id="character-name" class="display-data">
+            <span id="pre-name">Name: </span
+            ><input
+              id="name-character"
+              type="text"
+              placeholder="Your name"
+            /><br />
+          </div>
+
+          <div id="flex-character-container">
+            <figure id="char-img" class="flex-item-img char-img-exp">
+              <img src="#" alt="Character image" style="color: rgb(47,47,47)" />
+              <i class="fas fa-expand"></i>
+            </figure>
+            <br />
+
+            <div class="display-data">
+              <ul id="character-data" class="flex-item-list">
+                <li id="str"></li>
+                <li id="dex"></li>
+                <li id="con"></li>
+                <li id="wsd"></li>
+                <!--<li id="int"></li>-->
+                <li id="hp"></li>
+                <li id="gl"></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="display-data">
+            <div id="character-info">
+              <p id="character-text"><!-- Dynamic info --></p>
+            </div>
+            <br />
+            <button id="btn-keep" class="btn">Keep Character</button>
+            <button id="btn-delete" class="btn">Delete Character</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="back"><button>Back to menu</button></div>
+    
+
+    <button id="start-button" class="btn btn-start btn-startHd">BEGIN JOURNEY</button>
+
+    <!-- CHAPTER 1 - THE ROAD TO SMALLTOWN -->
+
+    <!-- EPISODE CONTAINER -->
+    <section class="story-wrapper">
+      <article id="episode-container" class="episode-stories">
+        <br />
+        <!-- Here are the story episodes integrated -->
+        <br />
+      </article>
+      <div class="stat-container-hd stat-container">
+        <ul id="display-stat">                                 
+          <li id="str" class="stat-li"></li>
+          <li id="dex" class="stat-li"></li>
+          <li id="con" class="stat-li"></li>
+          <li id="wsd" class="stat-li"></li>
+          <!--<li id="int" class="stat-li"></li>-->
+          <li id="hp" class="stat-li"></li>                                 
+          <li id="gl" class="stat-li"></li>                                 
+        </ul>`;             
+      </div>
+    </section>
+
+    <!-- END EPISODE -->
+
+    <footer><small class="footer-text">©2019 - RIBERA</small></footer>
+
+    <br />
+    <div
+      style="background: rgb(232,232,232); margin: 0 auto;"
+      id="showTest"
+    ></div>
+    <br />
+    <script src="scripts/script.js"></script>
+    <script src="scripts/episodeHandler.js"></script>
+  </body>
+</html>
